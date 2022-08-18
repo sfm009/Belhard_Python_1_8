@@ -17,6 +17,13 @@
 """
 import time
 
-# start_time = time.time()
-# end_time = time.time()
-# difference = e - s
+start_time = time.time()
+end_time = time.time()
+difference = end_time - start_time
+
+
+class class_benchmark:
+    def def_benchmark(self):
+
+
+

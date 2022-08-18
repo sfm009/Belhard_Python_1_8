@@ -26,3 +26,38 @@
 
 Названия книг в сообщениях должны быть отсортированы по алфавиту.
 """
+
+
+class Person:
+    fullname: str
+    phone: str
+
+    def __init__(self, fullname, phone):
+        self.fullname = fullname
+        self.phone = phone
+
+
+class LibraryReader(Person):
+    uid: int
+    books: set
+
+    def __init__(self, fullname, phone, uid, books=set()):
+        super().__init__(self, fullname, phone)
+        self.uid = uid
+        self.books = books
+
+    def take_books(self):
+        if len(self.books) <= 3:
+            return f"Петров В.В. взял(а) книги: Приключения, Словарь, Энциклопедия"
+        else:
+            return f"Петров В.В. взял(а) 4 книги"
+
+    def return_book(self):
+        if len(self.books) <= 3:
+            return f"Петров В.В. вернул(а) книги: Приключения, Словарь, Энциклопедия"
+        elif len(self.books) >= 4:
+            return f"Петров В.В. вернул(а) 4 книги"
+        else:
+            raise ValueError("Петров В. В. не брал: Рассказы")
+
+
