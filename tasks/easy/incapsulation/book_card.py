@@ -29,7 +29,7 @@ class BookCard:
 
     @property
     def author(self):
-        return self.author
+        return self.__author
 
     @property
     def title(self):
@@ -51,20 +51,20 @@ class BookCard:
     @author.setter
     def author(self, value):
         if isinstance(value, str):
-            pass
+            return self.__author
         else:
             raise ValueError("Тип объекта - не строка")
 
     @title.setter
     def title(self, value):
         if isinstance(value, str):
-            pass
+            return self.__title
         else:
             raise ValueError("Тип объекта - не строка")
 
     @year.setter
     def year(self, value):
         if isinstance(value, int) and 0 < value <= CURRENT_YEAR:
-            pass
+            return self.__year
         else:
             raise ValueError("Год некорректный")
