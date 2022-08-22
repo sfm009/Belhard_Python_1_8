@@ -19,14 +19,13 @@ class GameObject:
         self.__y = y
 
     @property
-    def move(self, x):
-        return x
+    def x(self):
+        return self.__x
 
     @property
-    def move(self, y):
-        return y
+    def y(self):
+        return self.__y
 
-    @move.setter
     def move(self, delta_x, delta_y):
         self.__x += delta_x
         self.__y += delta_y
