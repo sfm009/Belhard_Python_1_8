@@ -14,18 +14,22 @@ class GameObject:
     __x: int
     __y: int
 
-    def __init__(self, __x, __y):
-        self.__x = __x
-        self.__y = __y
+    def __init__(self, x, y):
+        self.__x = x
+        self.__y = y
 
     @property
-    def move(self):
-        return self.__x, self.__y
+    def move(self, x):
+        return x
+
+    @property
+    def move(self, y):
+        return y
 
     @move.setter
-    def move(self, val):
+    def move(self, delta_x, delta_y):
         self.__x += delta_x
         self.__y += delta_y
 
 
-obj_1 = GameObject()
+obj_1 = GameObject(3, 3)

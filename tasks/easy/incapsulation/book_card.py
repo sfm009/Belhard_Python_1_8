@@ -29,7 +29,7 @@ class BookCard:
 
     @property
     def author(self):
-        return self.__author
+        return self.author
 
     @property
     def title(self):
