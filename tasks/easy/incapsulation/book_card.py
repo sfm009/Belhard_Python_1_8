@@ -49,7 +49,7 @@ class BookCard:
         return self > other
 
     @author.setter
-    def author(self, value):
+    def author(self, value=author):
         if isinstance(value, str):
             pass
         else:
