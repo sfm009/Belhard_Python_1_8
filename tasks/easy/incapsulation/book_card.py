@@ -49,22 +49,22 @@ class BookCard:
         return self > other
 
     @author.setter
-    def author(self, value=author):
-        if isinstance(value, str):
-            return self.__author
-        else:
+    def author(self, value):
+        if isinstance(value, str) is False:
             raise ValueError("Тип объекта - не строка")
 
     @title.setter
     def title(self, value):
-        if isinstance(value, str):
-            return self.__title
-        else:
+        if isinstance(value, str) is False:
             raise ValueError("Тип объекта - не строка")
 
     @year.setter
     def year(self, value):
         if isinstance(value, int) and 0 < value <= CURRENT_YEAR:
-            return self.__year
+            pass
         else:
             raise ValueError("Год некорректный")
+
+
+book_1 = BookCard('Sapkovski', 'The Witcher', 1986)
+print(book_1)
