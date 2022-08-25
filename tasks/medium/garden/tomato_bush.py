@@ -1,11 +1,7 @@
-from tasks.medium.garden.tomato import Tomato
-
-
-class TomatoBush(Tomato):
+class TomatoBush:
     tomato_list: list
 
-    def __init__(self, ripeness, states, *args):
-        super().__init__(ripeness, states)
+    def __init__(self, *args):
         self.tomato_list = list(args)
 
     def grow_all(self):

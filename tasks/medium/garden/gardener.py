@@ -1,15 +1,13 @@
-from tasks.medium.garden.tomato_bush import TomatoBush
-
-
-class Gardener(TomatoBush):
+class Gardener:
     name: str
     plants: list
 
-    def __init__(self, name, plants, *args):
+    def __init__(self, name, *args):
         self.name = name
-        self.plants = plants
-        args =
+        self.plants = list(args)
 
-    @staticmethod
     def work(self):
         print('Садовник работает')
+
+    def harvest(self):
+        if
