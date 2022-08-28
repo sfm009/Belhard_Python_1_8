@@ -46,18 +46,21 @@ class LibraryReader(Person):
         self.uid = uid
         self.books = set()
 
-    def take_books(self):
+    def take_books(self, *args):
+        sorted_args = ', '.join(sorted(args))
+        self.books.update(args)
         if len(self.books) <= 3:
-            return f"Петров В.В. взял(а) книги: {self.books}"
+            return f"{self.fullname} взял(а) книги: {sorted_args}"
         else:
-            return f"Петров В.В. взял(а) {len(self.books)} книги"
+            return f"{self.fullname} взял(а) 4 книги"
 
-    def return_book(self):
-        if len(self.books) == 3:
-            return f"Петров В.В. вернул(а) книги: {self.books}"
-        elif len(self.books) >= 4:
-            return f"Петров В.В. вернул(а) {len(self.books)} книги"
+    def return_book(self, *args):
+        sorted_args = ', '.join(sorted(args))
+        if self.books.issuperset(set(args)) and len(self.books) <= 3:
+            return f"{self.fullname} вернул(а) книги: {sorted_args}"
+        elif self.books.issuperset(set(args)) and len(self.books) > 3:
+            return f"{self.fullname} вернул(а) 4 книги"
         else:
-            raise ValueError("Петров В. В. не брал: Рассказы")
+            raise ValueError(f"{self.fullname} не брал: {set(args).difference(self.books)}")
 
 
