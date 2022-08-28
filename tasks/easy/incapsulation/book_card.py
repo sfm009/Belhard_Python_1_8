@@ -23,9 +23,9 @@ class BookCard:
     __year: int
 
     def __init__(self, author, title, year):
-        self.__author = author
-        self.__title = title
-        self.__year = year
+        self.author = author
+        self.title = title
+        self.year = year
 
     @property
     def author(self):
@@ -48,23 +48,36 @@ class BookCard:
     def __gt__(self, other):
         return self > other
 
+    def __ne__(self, other):
+        return self != other
+
+    def __le__(self, other):
+        return self <= other
+
+    def __ge__(self, other):
+        return self >= other
+
     @author.setter
     def author(self, value):
         if isinstance(value, str) is False:
-            raise ValueError("Тип объекта - не строка")
+            raise ValueError
+        else:
+            self.__author = value
 
     @title.setter
     def title(self, value):
         if isinstance(value, str) is False:
-            raise ValueError("Тип объекта - не строка")
+            raise ValueError
+        else:
+            self.__title = value
 
     @year.setter
     def year(self, value):
         if isinstance(value, int) and 0 < value <= CURRENT_YEAR:
-            pass
+            self.__year = value
         else:
-            raise ValueError("Год некорректный")
+            raise ValueError
 
 
-book_1 = BookCard('Sapkovski', 'The Witcher', 1986)
-print(book_1)
+# book_1 = BookCard('Sapkovski', 'The Witcher', 1986)
+# print(book_1)
