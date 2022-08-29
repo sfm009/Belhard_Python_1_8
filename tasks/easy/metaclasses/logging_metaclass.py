@@ -24,6 +24,3 @@ def class_decorator(cls):
         decorated = log_decorator(value)
         setattr(cls, name, decorated)
     return cls
-
-
-

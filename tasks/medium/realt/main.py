@@ -15,5 +15,3 @@ if __name__ == '__main__':
         Person.earn_money(person_1, 20)
 
     Person.make_deal(person_1, house_2)
-
-

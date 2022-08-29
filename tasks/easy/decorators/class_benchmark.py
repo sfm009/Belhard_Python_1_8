@@ -39,14 +39,3 @@ def class_benchmark(cls):
         decorated = def_benchmark(val)
         setattr(cls, name, decorated)
     return cls
-
-
-
-
-
-
-
-
-
-
-

@@ -62,5 +62,3 @@ class LibraryReader(Person):
             return f"{self.fullname} вернул(а) 4 книги"
         else:
             raise ValueError(f"{self.fullname} не брал: {set(args).difference(self.books)}")
-
-

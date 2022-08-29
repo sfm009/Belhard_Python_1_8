@@ -31,7 +31,7 @@
   вернуть строку "{brand} {model} ({color} - {issue_year}) пролетел {km}
   километров"
 """
-from abc import abstractmethod, ABC
+from abc import ABC, abstractmethod
 
 
 class Transport(ABC):
@@ -78,5 +78,3 @@ class Airplane(Transport):
     def move(self, num_km):
         super().move(num_km)
         return f"{self.brand} {self.model} ({self.color} - {self.issue_year}) пролетел {num_km} километров"
-
-

@@ -15,4 +15,3 @@ class TomatoBush:
     def give_away_all(self):
         print(f'Собрано {len(self.tomato_list)} томатов\nКуст очищен')
         self.tomato_list.clear()
-

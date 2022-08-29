@@ -23,15 +23,20 @@ https://www.youtube.com/watch?v=8o7ZKTvZpLc
 
 class AmericanPerson:
     def i_love_science(self):
-        return f"I love science"
+        result = "I love science"
+        return result
+
 
 class RussianPerson:
     def i_love_science(self):
-        return f"Я люблю науку"
+        result = "Я люблю науку"
+        return result
+
 
 class GermanyPerson:
     def i_love_science(self):
-        return f"ich liebe Wissenschaft"
+        result = "ich liebe Wissenschaft"
+        return result
 
 
 def person_love_science(obj):

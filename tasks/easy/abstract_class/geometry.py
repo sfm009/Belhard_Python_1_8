@@ -78,6 +78,3 @@ class Square(Rectangle):
 
     def get_square(self):
         return self.a * self.a
-
-
-
