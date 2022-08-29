@@ -16,15 +16,36 @@
 Всего затрачено времени на выполнение: {end_time - start_time}
 """
 import time
-start_time = time.time()
-end_time = time.time()
-difference = end_time - start_time
 
 
-def class_benchmark(cls, *args, **kwargs):
-    print(f'Выполняем {func.__name__} с args: {args} и kwargs: {kwargs}\nВремя начала: {start_time}')
-    #def def_benchmark():
-    print(f'Выполнено {func.__name__}\nВремя окончания: {end_time}\nВсего затрачено времени на выполнение: {difference}')
+def def_benchmark(func):
+    def wrapper(*args, ** kwargs):
+        start_time = time.time()
+        print(f'Выполняем {func.__name__} с args: {args} и kwargs: {kwargs}\n'
+              f'Время начала: {start_time}')
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        difference = end_time - start_time
+        print(f'Выполнено {func.__name__}\n'
+              f'Время окончания: {end_time}\n'
+              f'Всего затрачено времени на выполнение: {difference}')
+        return result
+    return wrapper
+
+
+def class_benchmark(cls):
+    call_atr = {k: v for k, v in cls.__dict__.items() if k.find('_')}
+    for name, val in call_atr.items():
+        decorated = def_benchmark(val)
+        setattr(cls, name, decorated)
+    return cls
+
+
+
+
+
+
+
 
 
 
