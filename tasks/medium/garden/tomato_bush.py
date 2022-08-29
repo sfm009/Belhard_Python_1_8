@@ -5,19 +5,14 @@ class TomatoBush:
         self.tomato_list = list(args)
 
     def grow_all(self):
-        for i in range(len(self.tomato_list)):
-            self.ripeness = self.states[i]
+        for tomato in self.tomato_list:
+            tomato.grow()
 
     def all_are_ripe(self):
-        for i in range(len(self.tomato_list)):
-            if self.tomato_list[i] == self.states[-1]:
-                return True
-            else:
-                return False
+        for tomato in self.tomato_list:
+            tomato.is_ripe()
 
     def give_away_all(self):
-        for i in range(len(self.tomato_list)):
-            if self.tomato_list[i] == self.states[i]:
-                self.tomato_list.pop(i)
-        return self.tomato_list
+        print(f'Собрано {len(self.tomato_list)} томатов\nКуст очищен')
+        self.tomato_list.clear()
 

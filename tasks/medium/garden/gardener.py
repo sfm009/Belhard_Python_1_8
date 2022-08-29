@@ -7,7 +7,16 @@ class Gardener:
         self.plants = list(args)
 
     def work(self):
-        print('Садовник работает')
+        for plant in self.plants:
+            plant.grow_all()
 
     def harvest(self):
-        if
+        all_tomato = []
+        for plant in self.plants:
+            if plant.all_are_ripe() is False:
+                break
+            all_tomato.extend(plant.tomato_list)
+            plant.give_away_all()
+        else:
+            return all_tomato
+        print('Томаты не созрели')

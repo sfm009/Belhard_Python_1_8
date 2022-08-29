@@ -7,7 +7,7 @@ class Tomato:
         self.index = index
         self.ripeness = ripeness
 
-    def growl(self):
+    def grow(self):
         for i in range(1, len(self.states)):
             self.ripeness = self.states[i]
 
