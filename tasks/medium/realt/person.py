@@ -7,11 +7,11 @@ class Person:
     money: int
     realty: list
 
-    def __init__(self, name, age, money=0, realty=[]):
+    def __init__(self, name, age, money=0):
         self.name = name
         self.age = age
         self.money = money
-        self.realty = realty
+        self.realty = []
 
     def info(self):
         print(self.name)
@@ -19,12 +19,12 @@ class Person:
         print(self.money)
         print(self.age)
 
-    def earn_money(self, earn_val=20):
+    def earn_money(self, earn_val):
         self.money += earn_val
+        print(f'Увеличиваем количество денег на {earn_val}')
 
-    def make_deal(self, val):
-        house_2.cost = val
-        if val < self.money:
-            self.money -= val
-            self.realty.append(house_2)
-
+    def make_deal(self, obj):
+        if obj.cost < self.money:
+            self.money -= obj.cost
+            self.realty.append(House)
+            print(f'Приобретен {obj}')

@@ -1,4 +1,8 @@
 class House:
+    address: str
+    area: int
+    cost: int
+
     def __init__(self, address, area, cost):
         self.address = address
         self.area = area

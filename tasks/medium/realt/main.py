@@ -12,8 +12,8 @@ if __name__ == '__main__':
     person_1 = Person('Maksim', 33, 50)
 
     while person_1.money < house_2.cost:
-        Person.earn_money(person_1)
+        Person.earn_money(person_1, 20)
 
-    Person.make_deal(person_1)
+    Person.make_deal(person_1, house_2)
 
 
