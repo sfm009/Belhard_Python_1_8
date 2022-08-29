@@ -77,7 +77,3 @@ class BookCard:
             self.__year = value
         else:
             raise ValueError
-
-
-# book_1 = BookCard('Sapkovski', 'The Witcher', 1986)
-# print(book_1)
